@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface AGTimer : NSObject
+@property BOOL isRunning;
+
+- (void)start;
+- (void)stop;
+- (void)reset;
+- (int)getTimeElapsedInSeconds;
+- (int)getTimeRemainingInSeconds;
+- (void)setStopTime:(int)seconds;
 
 @end

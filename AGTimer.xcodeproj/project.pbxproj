@@ -20,6 +20,8 @@
 		FADFDECB181B006D009D639D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FADFDEC9181B006D009D639D /* InfoPlist.strings */; };
 		FADFDECD181B006D009D639D /* AGTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFDECC181B006D009D639D /* AGTimerTests.m */; };
 		FADFDED8181B009E009D639D /* AGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFDED7181B009E009D639D /* AGTimer.m */; };
+		FADFDEDB181B1182009D639D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADFDEDA181B1182009D639D /* Storyboard.storyboard */; };
+		FADFDEE1181B1268009D639D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFDEE0181B1268009D639D /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		FADFDECC181B006D009D639D /* AGTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGTimerTests.m; sourceTree = "<group>"; };
 		FADFDED6181B009E009D639D /* AGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTimer.h; path = Model/AGTimer.h; sourceTree = "<group>"; };
 		FADFDED7181B009E009D639D /* AGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTimer.m; path = Model/AGTimer.m; sourceTree = "<group>"; };
+		FADFDEDA181B1182009D639D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		FADFDEDF181B1268009D639D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FADFDEE0181B1268009D639D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +115,14 @@
 		FADFDEAD181B006D009D639D /* AGTimer */ = {
 			isa = PBXGroup;
 			children = (
+				FADFDED9181B0188009D639D /* Model */,
 				FADFDEB6181B006D009D639D /* AGAppDelegate.h */,
 				FADFDEB7181B006D009D639D /* AGAppDelegate.m */,
 				FADFDEB9181B006D009D639D /* Images.xcassets */,
 				FADFDEAE181B006D009D639D /* Supporting Files */,
-				FADFDED6181B009E009D639D /* AGTimer.h */,
-				FADFDED7181B009E009D639D /* AGTimer.m */,
+				FADFDEDA181B1182009D639D /* Storyboard.storyboard */,
+				FADFDEDF181B1268009D639D /* MainViewController.h */,
+				FADFDEE0181B1268009D639D /* MainViewController.m */,
 			);
 			path = AGTimer;
 			sourceTree = "<group>";
@@ -147,6 +154,15 @@
 				FADFDEC9181B006D009D639D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FADFDED9181B0188009D639D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FADFDED7181B009E009D639D /* AGTimer.m */,
+				FADFDED6181B009E009D639D /* AGTimer.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +243,7 @@
 			files = (
 				FADFDEB2181B006D009D639D /* InfoPlist.strings in Resources */,
 				FADFDEBA181B006D009D639D /* Images.xcassets in Resources */,
+				FADFDEDB181B1182009D639D /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +265,7 @@
 				FADFDEB8181B006D009D639D /* AGAppDelegate.m in Sources */,
 				FADFDED8181B009E009D639D /* AGTimer.m in Sources */,
 				FADFDEB4181B006D009D639D /* main.m in Sources */,
+				FADFDEE1181B1268009D639D /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
