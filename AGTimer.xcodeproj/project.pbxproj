@@ -19,6 +19,7 @@
 		FADFDEC3181B006D009D639D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADFDEAB181B006D009D639D /* UIKit.framework */; };
 		FADFDECB181B006D009D639D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FADFDEC9181B006D009D639D /* InfoPlist.strings */; };
 		FADFDECD181B006D009D639D /* AGTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFDECC181B006D009D639D /* AGTimerTests.m */; };
+		FADFDED8181B009E009D639D /* AGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFDED7181B009E009D639D /* AGTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		FADFDEC8181B006D009D639D /* AGTimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AGTimerTests-Info.plist"; sourceTree = "<group>"; };
 		FADFDECA181B006D009D639D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FADFDECC181B006D009D639D /* AGTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGTimerTests.m; sourceTree = "<group>"; };
+		FADFDED6181B009E009D639D /* AGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTimer.h; path = Model/AGTimer.h; sourceTree = "<group>"; };
+		FADFDED7181B009E009D639D /* AGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTimer.m; path = Model/AGTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				FADFDEB7181B006D009D639D /* AGAppDelegate.m */,
 				FADFDEB9181B006D009D639D /* Images.xcassets */,
 				FADFDEAE181B006D009D639D /* Supporting Files */,
+				FADFDED6181B009E009D639D /* AGTimer.h */,
+				FADFDED7181B009E009D639D /* AGTimer.m */,
 			);
 			path = AGTimer;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADFDEB8181B006D009D639D /* AGAppDelegate.m in Sources */,
+				FADFDED8181B009E009D639D /* AGTimer.m in Sources */,
 				FADFDEB4181B006D009D639D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
