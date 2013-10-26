@@ -17,5 +17,6 @@
 - (int)getTimeElapsedInSeconds;
 - (int)getTimeRemainingInSeconds;
 - (void)setStopTime:(int)seconds;
+- (void)clearStopTime;
 
 @end

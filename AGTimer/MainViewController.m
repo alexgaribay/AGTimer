@@ -29,39 +29,68 @@
     [super viewDidLoad];
 	_timer = [[AGTimer alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:nil
+                                             selector:@selector(timerComplete)
                                                  name:@"AGTimerComplete"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateTimeLabel)
                                                  name:@"AGTimerElapsedChange"
                                                object:nil];
+    [self.countDownSwitch addTarget:self action:@selector(switchToggled) forControlEvents:UIControlEventValueChanged];
     [self updateTimeLabel];
 }
 
 - (IBAction)startTimer:(id)sender
 {
+    self.countDownSwitch.enabled = NO;
     [_timer start];
 }
 - (IBAction)stopTimer:(id)sender
 {
+    self.countDownSwitch.enabled = YES;
     [_timer stop];
 }
 - (IBAction)resetTimer:(id)sender
 {
+    self.countDownSwitch.enabled = YES;
     [_timer reset];
 }
 
 
 - (void)updateTimeLabel
 {
-    _timeElapsed.text = [NSString stringWithFormat:@"%i", [_timer getTimeElapsedInSeconds]];
+    if (self.countDownSwitch.isOn)
+    {
+        _timeElapsed.text = [NSString stringWithFormat:@"%i", [_timer getTimeRemainingInSeconds]];
+    }
+    else
+    {
+        _timeElapsed.text = [NSString stringWithFormat:@"%i", [_timer getTimeElapsedInSeconds]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)switchToggled
+{
+    if (self.countDownSwitch.isOn)
+    {
+        [_timer setStopTime:10];
+    }
+    else
+    {
+        [_timer clearStopTime];
+    }
+    [self updateTimeLabel];
+}
+
+- (void)timerComplete
+{
+    
 }
 
 @end

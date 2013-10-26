@@ -53,8 +53,8 @@
     if (_isRunning)
     {
         [self stop];
-        [self setTimeElapsed: 0];
     }
+    [self setTimeElapsed: 0];
 }
 
 - (void)timerTick
@@ -83,11 +83,23 @@
 
 - (void)setStopTime:(int)seconds
 {
-    if (seconds > 0)
+    if (!_isRunning)
     {
-        _stopTimeInSeconds = seconds;
+        if (seconds > 0 && _timeElapsedInSeconds == 0)
+        {
+            _stopTimeInSeconds = seconds;
+        }
     }
 }
+
+- (void)clearStopTime
+{
+    if (!_isRunning)
+    {
+        _stopTimeInSeconds = 0;
+    }
+}
+
 - (void) setTimeElapsed:(int)seconds
 {
     _timeElapsedInSeconds = seconds;

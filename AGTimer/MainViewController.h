@@ -10,6 +10,6 @@
 
 @interface MainViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel* timeElapsed;
-
-
+@property (strong, nonatomic) IBOutlet UILabel* timerCompleted;
+@property (strong, nonatomic) IBOutlet UISwitch* countDownSwitch;
 @end
