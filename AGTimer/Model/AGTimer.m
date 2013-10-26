@@ -12,6 +12,7 @@
 @property (nonatomic, strong) NSTimer* timer;
 @property int timeElapsedInSeconds;
 @property int stopTimeInSeconds;
+@property (readwrite) BOOL isRunning;
 @end
 
 

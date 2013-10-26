@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface AGTimer : NSObject
-@property BOOL isRunning;
+@property (readonly) BOOL isRunning;
 
 - (void)start;
 - (void)stop;
