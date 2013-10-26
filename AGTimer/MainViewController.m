@@ -28,28 +28,45 @@
 {
     [super viewDidLoad];
 	_timer = [[AGTimer alloc] init];
+    
+    // Subscribe to countdown timer notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(timerComplete)
                                                  name:@"AGTimerComplete"
                                                object:nil];
+    
+    // Subscribe to the timer elapsed changed. Basically it means that timer had a "tick"
+    // on the clock
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateTimeLabel)
                                                  name:@"AGTimerElapsedChange"
                                                object:nil];
+    
     [self.countDownSwitch addTarget:self action:@selector(switchToggled) forControlEvents:UIControlEventValueChanged];
     [self updateTimeLabel];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+// Start the timer
 - (IBAction)startTimer:(id)sender
 {
     self.countDownSwitch.enabled = NO;
     [_timer start];
 }
+
+// Stop the timer
 - (IBAction)stopTimer:(id)sender
 {
     self.countDownSwitch.enabled = YES;
     [_timer stop];
 }
+
+// Reset the timer
 - (IBAction)resetTimer:(id)sender
 {
     self.countDownSwitch.enabled = YES;
@@ -57,6 +74,7 @@
 }
 
 
+// Update the time label every time the elapsedTime has changed for the timer.
 - (void)updateTimeLabel
 {
     if (self.countDownSwitch.isOn)
@@ -69,16 +87,11 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)switchToggled
 {
     if (self.countDownSwitch.isOn)
     {
+        [_timer reset];
         [_timer setStopTime:10];
     }
     else
@@ -88,6 +101,7 @@
     [self updateTimeLabel];
 }
 
+// Make a label show temporarily to signify that the countdown timer completed.
 - (void)timerComplete
 {
     [UIView animateWithDuration:1.0
@@ -112,7 +126,7 @@
               {
                   if(finished)
                   {
-                      //put another block her to hide both the labels.
+                      // Do nothing
                   }
               }];
          }
