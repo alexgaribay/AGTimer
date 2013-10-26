@@ -90,7 +90,33 @@
 
 - (void)timerComplete
 {
-    
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
+                     animations:^(void)
+     {
+         [self.timerCompleted setAlpha:1.0];
+     }
+                     completion:^(BOOL finished)
+     {
+         if(finished)
+         {
+             [UIView animateWithDuration:1.0
+                                   delay:7.0
+                                 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
+                              animations:^(void)
+              {
+                  [self.timerCompleted setAlpha:0.0];
+              }
+                              completion:^(BOOL finished)
+              {
+                  if(finished)
+                  {
+                      //put another block her to hide both the labels.
+                  }
+              }];
+         }
+     }];
 }
 
 @end
